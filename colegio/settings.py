@@ -147,7 +147,7 @@ SOCIAL_AUTH_PIPELINE = (
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")#aumente
 MEDIA_ROOT=(os.path.join(RUTA_PROYECTO,"media"),)
-STATIC_ROOT = os.path.join(RUTA_PROYECTO, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL='/static/media/'
 STATICFILES_DIRS = [#aumente
         os.path.join(BASE_DIR, "static"),
