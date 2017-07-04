@@ -1,0 +1,26 @@
+<div class="card">
+    <strong>Enviar Mesajes a todos los clientes</strong><br>
+    <span>Todos los datos son requeridos (*)</span>
+ <form method="POST" id="Tipo" > 
+    {% csrf_token %}
+                <label>Asunto: (*)</label><input type="text" name="asunto" id="asunto" placeholder="Descrpción del contenido" required />
+               <label>Mensaje: (*)</label> <textarea placeholder="Escriba el mensaje a enviar..."
+               name="mensaje" cols="40" rows="5"></textarea><br>
+    <button class="btn btn-success">Guardar</button>
+  </form>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $('#Tipo').submit(function(e){
+        e.preventDefault();
+        $.ajax({
+            type:'POST',
+            url:'/mensajes/',
+            data:$('#Tipo').serialize(),
+            success:function(resp){
+                $("#FormAjax").html(resp);
+            }
+        });
+    });
+    });
+</script>

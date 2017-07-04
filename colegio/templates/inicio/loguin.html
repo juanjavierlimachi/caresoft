@@ -1,0 +1,243 @@
+  <style type="text/css">
+    #loginbox{margin-left: 0px;}
+    #loginbox{margin-top: 20px;}
+    #aviso{margin-left: 0px;}
+    #aviso{margin-top: 20px;}
+    .panel{border: 0px;}
+    #loginbox{margin-bottom: -20px;margin-top: 20px}
+    #signupbox{margin-left: 0px;}#signupbox{margin-bottom: -20px;margin-top: 20px}
+  </style>
+    <div class="container">    
+        <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+            <div class="panel panel-info" >
+                    <div class="panel-heading">
+                        <div class="panel-title">Inicie Sesión</div>
+                        <div style="float:right; font-size: 80%; position: relative; top:-20px"><a class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </a></div>
+                    </div>     
+
+                    <div style="padding-top:30px" class="panel-body" >
+
+                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                            
+                        <form id="loginform" class="form-horizontal" role="form" method="POST">
+
+                            {% csrf_token %}     
+                            <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="icon-user"></i></span>
+                                        <input id="login-username" type="text" class="form-control" name="name" value="" placeholder="Ingrese su Nombre de Usuario" required>                                        
+                                    </div>
+                                
+                            <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="icon-lock"></i></span>
+                                        <input id="login-password" type="password" class="form-control" name="password" placeholder="Ingrese su contraseña" required>
+                                    </div>
+                                <div style="margin-top:10px" class="form-group">
+                                    <!--?next={{ request.path }}-->
+                                    <div class="col-sm-12 controls">
+                                      <button id="btn-login" class="btn btn-success">Ingresar</button>  <label> ó </label>
+                                      <a id="btn-fblogin" href="{% url 'social:begin' 'facebook' %}" class="btn btn-primary"><span class="icon-facebook"></span></a>
+                                      <a type="button" href="{% url 'social:begin' 'google-oauth2' %}" class="btn btn-danger" id="gp"><span class="icon-google-plus"></span></a>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12 control">
+                                        <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                                            Crear Cuenta 
+                                        <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
+                                            Ahora  
+                                        </a>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </form>     
+
+
+
+                        </div>                     
+                    </div>  
+        </div>
+
+
+<!--aviso-->
+<div id="aviso" style="display:none; " class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+            <div class="panel panel-info" >
+                    <div class="panel-heading">
+                        <div class="panel-title">¿Porque devo registrar mis datos?</div>
+                        <div style="float:right; font-size: 80%; position: relative; top:-20px"><a class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </a></div>
+                    </div>     
+
+                    <div style="padding-top:30px" class="panel-body" >
+
+                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                     
+                            <p>
+                        Hola le pedimos que se registrarse a nuestro sítio web para que usted sea uno mas de nuestros usuarios en nuestra plataforma online para asi contactarnos desde cualquier lugar. enviandolo un mensaje a su correro electrónico cualquier novedad o curso que se lleve acabo.<a id="#" href="#" onclick="$('#aviso').hide(); $('#signupbox').show()">Registrarme</a>
+                    </p>
+
+                        </div>                     
+                    </div>  
+        </div>
+<!--fin aviso-->
+
+
+
+
+        <div id="signupbox" style="display:none; " class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div class="panel-title">Formulario de Registro (requeridos *)</div>
+                            <div style="float:right; font-size: 85%; position: relative; top:-20px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Ingresar</a></div>                                                                            
+                            <div style="float:right; font-size: 80%; position: relative; top:-20px"><a class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </a></div>
+                        </div>  
+                        <div class="panel-body" >
+                            <form id="signupform" class="form-horizontal" role="form">
+                                {% csrf_token %}
+                                <div id="signupalert" style="display:none" class="alert alert-danger">
+                                    <span></span>
+                                </div>
+                                    
+                                <div class="form-group">
+                                    <label for="icode" class="col-md-3 control-label">Nombre de Usuario(*)</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="username" id="user" placeholder="Ingrese su Nombre de Usuario" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="col-md-3 control-label">Contraseña(*)</label>
+                                    <div class="col-md-9">
+                                        <input type="password" class="form-control" name="password1" placeholder="Ingrese su contraseña" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="col-md-3 control-label">Confirmar(*)</label>
+                                    <div class="col-md-9">
+                                        <input type="password" class="form-control" name="password2" placeholder="Confirme su contraseña" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="firstname" class="col-md-3 control-label">Nombre(*)</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="first_name" placeholder="Ingrese su nombre" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastname" class="col-md-3 control-label">Apellido(*)</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="last_name" placeholder="Ingrese su apellido" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="firstname" class="col-md-3 control-label">Celular(*)</label>
+                                    <div class="col-md-9">
+                                        <input type="number" class="form-control" name="telefono" placeholder="Ingrese su num. de cel" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="col-md-3 control-label">Email(*)</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" id="email" name="email" placeholder="Ingrese su e-mail" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <!-- Button -->                                        
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i> Registrarse</button>
+                                      <a href="#" onClick="$('#signupbox').hide(); $('#aviso').show()">Porque devo registrarme?</a>
+                                    </div>
+                                </div>
+                            </form>
+                         </div>
+                    </div>
+         </div> 
+    </div>
+<script type="text/javascript">
+$(function(){
+    $('#user').blur(ejecutar);
+        function ejecutar(){
+            var use= $('#user').val();
+            $.ajax({
+                type:'get',
+                url:'/verificacion/',
+                data:{'use': use },
+                beforeSend: entesEnviar,
+                success:function (resp){
+                    console.log(resp);
+                    if(resp == "")
+                    {
+                        $("#signupalert").hide();
+                    }else{
+                        $("#signupalert").show(500);
+                        $("#signupalert").html(resp);
+                    }
+                }
+            });
+            function entesEnviar(){
+                $('#signupalert').text("Verificando...")
+            }
+        }
+
+    $("#login-username").focus();
+   // $("#email").focus();
+    $("#btn-login").on("click",function(e){
+        e.preventDefault();
+        $.ajax({
+            type:'POST',
+            url:'/loguin/',
+            data:$('#loginform').serialize(),
+            success:function(resp){
+                if(resp=='/privado/')
+                {
+                    //$('#exampleModal').modal('hide');
+                    window.location='/';
+                    bienvenida();
+                }
+                else{
+                     $("#login-alert").show(500);
+                    $("#login-alert").html(resp);
+                }
+            }
+        });
+    });
+    $("#btn-signup").on("click",function(e){
+        e.preventDefault();
+        $('#btn-signup').attr("disabled", true);
+        //$('#btn-signup').attr("value","Registrando...");
+        console.log($("#signupform").serialize());
+        $.ajax({
+            type:'POST',
+            url:'/regisrarse/',
+            data:$("#signupform").serialize(),
+            success:function(resp){
+                if(resp=='/'){
+                $('#exampleModal').modal('hide');
+                window.location='/';
+                }
+                else
+                {
+                    $("#signupalert").show(500);
+                    $("#signupalert").html(resp);
+                }
+            }
+        });
+    });
+});
+function bienvenida()
+    {
+        $.ajax({
+            type:'GET',
+            url:'/bienvenida/',
+            success:function(resp){
+                $("#exampleModal").modal("show");
+                $("#exampleModal").html(resp);
+            }
+        });
+    }
+</script>
+

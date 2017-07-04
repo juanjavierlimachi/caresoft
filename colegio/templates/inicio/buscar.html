@@ -1,0 +1,20 @@
+<script type="text/javascript">
+	$(".aa a").on('click',Escogido);
+	function Escogido(e){
+		e.preventDefault();
+		var ulrs=$(this).attr("href");
+		//alert(ulrs);
+		$.ajax({
+			type:'GET',
+			url:ulrs,
+			success:function(resp){
+				$("#FormAjax").html(resp);
+				$("#DatosAjax").hide(1000);
+			}
+		});
+	}
+</script>
+{% for i in resultados %}
+<li class="aa"><a href="/escogido/{{i.id}}/">Cod: {{i.id}}.- {{i.get_full_name|upper}},user: {{i.username}} - e-mail:{{i.email}} - Cel: {{i.telefono}} F: {{i.date_joined}}</a></li>
+
+{% endfor %}

@@ -1,0 +1,519 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>::CareSotf::</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.minWeb.css' %}">
+    <link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' />
+       <!-- Custom Theme files -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{% static 'js/jquery-1.12.4.minWeb.js' %}"></script>
+<script src="{% static 'js/bootstrap.minWeb.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.corner.js' %}"></script> 
+ <script src="{% static 'js/wow.min.js' %}"></script>
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    </script>
+    <link href="{% static 'css/animate.css' %}" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font.css' %}">
+    <style type="text/css">
+    .owl-item{
+      width: 300px;
+    }
+    .face .icon-facebook{border-radius: 90px;width: 30px;height: 30px;}
+    #owl-demo{width: 60%;}
+      .social{
+        position: fixed;
+        right: 0;
+        top: 35%;
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction:column;
+        align-items:flex-end;
+        z-index: 1000;
+      }
+      .icon{
+        color: white;
+        text-decoration: none;
+        display: flex;
+        transition:all .5s;
+        padding: 10px 15px;
+        text-decoration: none;
+        }
+        .iconF{
+        color: white;
+        text-decoration: none;
+        display: flex;
+        transition:all .5s;
+        padding: 10px 15px;
+        text-decoration: none;
+        border-radius: 50px;
+        }
+        .icon-facebook{
+          background: #3b5998;
+        }
+        .icon-twitter{
+          background: #00abf0;
+        }
+        .icon-google-plus{
+          background: #d95232;
+        }
+        .icon-pinterest{
+          background: #ae181f;
+        }
+        .icon-mail{
+          background: #666666;
+        }
+        .icon-user{background: black;}
+        .icon:first-child{
+          border-radius: 0.5rem 0 0 0;
+        }
+        .icon:last-child{
+          border-radius: 0 0 0 0.5rem;
+        }
+        .icon:hover{
+          padding-right: 3rem;
+          border-radius: 1rem 0 0 1rem;
+          box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.42);
+        }
+        .social #enlaces{list-style: none;}
+        #enlaces{list-style: none;}
+    </style>
+  </head>
+  <body>
+    <div class="bg">
+    <div class="container">
+      <div id="home" class="header wow bounceInDown" data-wow-delay="0.4s">
+          <div class="top-header">
+            <div class="logo">
+              <a href="#">CareSotf</a>
+            </div>
+             <nav class="top-nav">
+              <ul class="top-nav">
+                
+                <li><a  href="#about" class="scroll">Nosotros</a></li>
+                <li><a href="#cursos" class="scroll">Tutoriales</a></li>
+                <li><a href="#contact" class="scroll">Contactos</a></li>
+                {% if user.is_authenticated %}
+                <!-- <li><a href="#team">Novedades</a></li> -->
+                <li><a href="/salir/">Salir</a></li>
+                {% else %}
+                <li id="enlaces"><a href="/loguin/" class="scroll" data-toggle="modal" data-target="#exampleModal">Ingresar</a></li>
+                {% endif %}
+              </ul>
+              <a href="#" id="pull"><img src="{% static 'img/nav-icon.png' %}" title="menu" /></a>
+            </nav>
+            <div class="clearfix"> </div>
+          </div>
+        </div>
+      </div>
+      <div class="banner-info">
+        <div class="container">
+          <h1 class="wow fadeIn" data-wow-delay="0.5s"><span>CareSoft</span><br /><label>Desarrollo de Software</label></h1>
+        <div class="top-banner-grids wow bounceInUp" data-wow-delay="0.4s">
+          <div class="banner-grid text-center">
+            <span class="top-icon1"> </span>
+            <h3>Analisis</h3>
+          </div>
+          <div class="banner-grid text-center">
+            <span class="top-icon2"> </span>
+            <h3>Diseño</h3>
+          </div>
+          <div class="banner-grid text-center">
+            <span class="top-icon3"> </span>
+            <h3>Codificación</h3>
+          </div>
+          <div class="banner-grid text-center">
+            <span class="top-icon4"> </span>
+            <h3>Imprementación</h3>
+          </div>
+          <div class="banner-grid text-center">
+            <span class="top-icon5"> </span>
+            <h3>Ejecución</h3>
+          </div>
+          <div class="clearfix"> </div>
+        </div>
+        </div>
+      </div>
+      <div class="clearfix"> </div>
+    </div>
+      
+      <div class="top-grids text-center">
+        <div class="container">
+          <div class="col-md-3 wow bounceIn" data-wow-delay="0.4s">
+            <div class="top-grid">
+              <span class="icon1"> </span>
+              <h3><a href="#">Windows</a></h3>
+              <label> </label>
+              <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,</p>
+            </div>
+          </div>
+          <div class="col-md-3 wow bounceIn" data-wow-delay="0.4s">
+            <div class="top-grid">
+              <span class="icon2"> </span>
+              <h3><a href="#">Android</a></h3>
+              <label> </label>
+              <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,</p>
+            </div>
+          </div>
+          <div class="col-md-3 wow bounceIn" data-wow-delay="0.4s">
+            <div class="top-grid">
+              <span class="icon1"> </span>
+              <h3><a href="#">Mac</a></h3>
+              <label> </label>
+              <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,</p>
+            </div>
+          </div>
+          <div class="col-md-3 wow bounceIn" data-wow-delay="0.4s">
+            <div class="top-grid">
+              <span class="icon1"> </span>
+              <h3><a href="#">Linux</a></h3>
+              <label> </label>
+              <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,</p>
+            </div>
+          </div>
+          <div class="clearfix"> </div>
+        </div>
+      </div>
+      <div id="about" class="about">
+        <div class="head-section">
+          <div class="container">
+            <h3><span>Nuestra empresa </span><label>CareSoft</label></h3>
+          </div>
+        </div>
+          
+          <div class="about-grids">
+            <div class="col-md-4 about-grid about-grid1 wow fadeInLeft" data-wow-delay="0.4s">
+              <div class="about-grid-info">
+                <h4><a href="#">Analisis en Proyectos</a></h4>
+                <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed </p>
+              </div>
+              <div class="about-grid-pic">
+              <img src="{% static 'img/about-pic1.jpg' %}" title="name" />
+              </div>
+            </div>
+            <div class="col-md-4 about-grid about-grid2 wow fadeInUp" data-wow-delay="0.4s">
+              <div class="about-grid-pic">
+              <img src="{% static 'img/about-pic2.jpg' %}" title="name" />
+              </div>
+              <div class="about-grid-info">
+                <h4><a href="#">Metodologias Aplicadas</a></h4>
+                <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed </p>
+              </div>
+            </div>
+            <div class="col-md-4 about-grid about-grid1 wow fadeInRight" data-wow-delay="0.4s">
+              <div class="about-grid-info">
+                <h4><a href="#">Equipos de Desarrolo</a></h4>
+                <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed </p>
+              </div>
+              <div class="about-grid-pic">
+              <img src="{% static 'img/about-pic3.jpg' %}" title="name" />
+              </div>
+            </div>
+            <div class="clearfix"> </div>
+          </div>
+        
+        </div>
+      </div>
+      
+      <div id="process" class="process">
+        <div class="head-section">
+          <div class="container">
+            <h3><label>CareSoft </label><span> una Empresa en crecimiento</span></h3>
+          </div>
+        </div>
+        <div class="container">
+          <div class="process-grids text-center wow bounce" data-wow-delay="0.4s">
+            <div class="col-md-3 process-grid process-grid1 wow bounceInUp" data-wow-delay="0.4s">
+              <span class="p-icon1"> </span>
+              <h4><li id="enlaces"><a href="/perso/" data-toggle="modal" data-target="#exampleModal">Visión</a></li></h4>
+            </div>
+            <div class="col-md-3 process-grid process-grid2 wow bounceInDown" data-wow-delay="0.4s">
+              <span class="p-icon2"> </span>
+              <h4><li id="enlaces"><a href="/person/" data-toggle="modal" data-target="#exampleModal">Misión</a></li></h4>
+            </div>
+            <div class="col-md-3 process-grid process-grid3 wow bounceInUp" data-wow-delay="0.4s">
+              <span class="p-icon3"> </span>
+              <h4><li id="enlaces"><a href="/persona/" data-toggle="modal" data-target="#exampleModal">Historia</a></li></h4>
+            </div>
+            <div class="col-md-3 process-grid process-grid4 wow bounceInDown" data-wow-delay="0.4s">
+              <span class="p-icon4"> </span>
+              <h4><li id="enlaces"><a href="/personal/" data-toggle="modal" data-target="#exampleModal">Personal</a></li></h4>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+      <div class="blog" id="cursos">
+        <div class="head-section">
+          <div class="container">
+            <h3><span>Presentaciones</span><label>Gratuitos</label></h3>
+          </div>
+        </div>
+        <div class="blog-grids">
+          <div class="container"> 
+          <div class="blog-grids-left">
+              <div class="blog-grid-left wow bounceIn" data-wow-delay="0.4s">
+                <div class="blog-art-pic">
+               <div style="width: 100%;">
+         <div style="position: relative; padding-bottom: 56.25%; padding-top: 0; height: 0;">
+         <iframe frameborder="0" width="1200" height="675" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.genial.ly/View/Index/5942fda0408d82a214bebf21" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="no" allownetworking="all"></iframe>
+         </div>
+         </div>
+                </div>
+                <div class="blog-art-info">
+                  <h3><a href="#">Escrum</a></h3>
+                  <p>Scrum es un proceso en el que se aplican de manera regular un conjunto de buenas prácticas para trabajar colaborativamente, en equipo, y obtener el mejor resultado posible de un proyecto.</p>
+                  <ul class="blog-art-info-stags">
+                    <li class="blog-art-info-stags-left"><span><a href="https://www.genial.ly/View/Index/5942fda0408d82a214bebf21" target="_blank">Ver contenido</a></span></li>
+                    <li class="blog-art-info-stags-right">
+                      <ul>
+                        <li><a href="#"> <label class="b-icon1"> </label>24</a></li>
+                        <li><a href="#"> <label class="b-icon2"> </label>9</a></li>
+                      </ul>
+                    </li>
+                    <div class="clearfix"> </div>
+                  </ul>
+                </div>
+              </div>
+              <div class="blog-grid-left wow bounceIn" data-wow-delay="0.4s">
+                <div class="blog-art-pic">
+                  <div style="width: 100%;">
+ <div style="position: relative; padding-bottom: 56.25%; padding-top: 0; height: 0;">
+ <iframe frameborder="0" width="1200" height="675" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.genial.ly/View/Index/5943485793917a38887da6c8" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="no" allownetworking="all" target="_blank"></iframe>
+ </div>
+ </div>
+                </div>
+                <div class="blog-art-info">
+                  <h3><a href="#">Placa Base de la PC</a></h3>
+                  <p>La placa base, también conocida como placa madre o placa principal (motherboard o mainboard en inglés), es una tarjeta de circuito impreso a la que se conectan los componentes que constituyen la computadora.</p>
+                  <ul class="blog-art-info-stags">
+                    <li class="blog-art-info-stags-left"><span><a href="https://www.genial.ly/View/Index/5943485793917a38887da6c8" target="_blank">Ver Contenido</a></span></li>
+                    <li class="blog-art-info-stags-right">
+                      <ul>
+                        <li><a href="#"> <label class="b-icon1"> </label>24</a></li>
+                        <li><a href="#"> <label class="b-icon2"> </label>9</a></li>
+                      </ul>
+                    </li>
+                    <div class="clearfix"> </div>
+                  </ul>
+                </div>
+              </div>
+            <div class="clearfix"> </div>
+            <div class="blog-grid-left-big wow bounceIn" data-wow-delay="0.4s">
+              <div class="blog-grid-left-big-info">
+                <div class="blog-art-info">
+                  <h3><a href="#">Portal Web</a></h3>
+                  <p>Este es nuestro portal Web online que fue creado por la empresa Caresoft </p>
+                  <ul class="blog-art-info-stags">
+                    <li class="blog-art-info-stags-left"><span>12.11.2014</span></li>
+                    <li class="blog-art-info-stags-right">
+                      <ul>
+                        <li><a href="#"> <label class="b-icon1"> </label>24</a></li>
+                        <li><a href="#"> <label class="b-icon2"> </label>9</a></li>
+                      </ul>
+                    </li>
+                    <div class="clearfix"> </div>
+                  </ul>
+                </div>
+              </div>
+              <div class="blog-grid-left-big-pic">
+                <div class="blog-art-pic">
+                  <img src="{% static 'img/11.PNG' %}" title="name" />
+                </div>
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+          </div>
+          <div class="blog-grids-right wow bounceIn" data-wow-delay="0.4s">
+            <div class="blog-grid-left blog-grid-right">
+                <div class="blog-art-pic">
+                  <img src="{% static 'images/b3.jpg' %}" title="name" />
+                </div>
+                <div class="blog-art-info">
+                  <h3><a href="#">Heading</a></h3>
+                  <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.</p>
+                  <ul class="blog-art-info-stags">
+                    <li class="blog-art-info-stags-left"><span>12.11.2014</span></li>
+                    <li class="blog-art-info-stags-right">
+                      <ul>
+                        <li><a href="#"> <label class="b-icon1"> </label>24</a></li>
+                        <li><a href="#"> <label class="b-icon2"> </label>9</a></li>
+                      </ul>
+                    </li>
+                    <div class="clearfix"> </div>
+                  </ul>
+                </div>
+              </div>
+          </div>
+          <div class="clearfix"> </div>
+        </div>
+        </div>
+      </div>
+ 
+      </div>
+      <div class="work-with-us text-center">
+        <div class="container">
+          <h4>La Empresa CareSoft realiza trabajos 100 % garatizados y profecionales como ser:</h4>
+          <p>Desarrollo de sistemas informáticos</p>
+          <p>Asesoramiento en proyectos informáticos</p>
+          <p>Mantenimiento y soporte tecnico de computadoras</p>
+          <p>Instalaciones de sistemas operativos Windows</p>
+          <p>*** Muy Pronto estaremos con muchos más servicios ***</p>
+        </div>
+      </div>
+     
+      <div id="team" class="team">
+        <div class="head-section">
+          <div class="container">
+             <h3><span>Integrantes de la Empresa: </span><label>CareSoft Innova S.R.L</label></h3>
+          </div>
+        </div>
+       
+            <div class="sreen-gallery-cursual">
+              <link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet">
+                  <script src="{% static 'js/owl.carousel.js' %}"></script>
+                      <script>
+                  $(document).ready(function() {
+                    $("#owl-demo").owlCarousel({
+                      items : 3,
+                      lazyLoad : true,
+                      autoPlay : true,
+                      navigation : true,
+                      navigationText :  false,
+                      pagination : false,
+                    });
+                  });
+                  </script>
+               
+       <div id="owl-demo" class="owl-carousel text-center">
+        {% for i in usuarios %}
+               <div class="item wow zoomIn" data-wow-delay="0.3s">
+                            
+                            <h5>{{i.get_full_name|upper}}</h5>
+                            <label>{{i.email}}</label>
+                            <label>Desarrollador</label>
+                </div>   
+        {% endfor %} 
+       </div>
+          
+      </div>
+      </div>
+      <div id="contact" class="map">
+        <div class="map-location">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3759.0098196358967!2d-65.76081968552288!3d-19.58407998679841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDM1JzAyLjciUyA2NcKwNDUnMzEuMSJX!5e0!3m2!1ses!2ses!4v1498078598501" width="500" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+        <div class="contact-info text-center wow fadeInLeft" data-wow-delay="0.3s">
+          <h4>Oficina Central<br> de la Empresa de desarrollo de <br><span>Software CareSoft Innova S.R.L</span></h4>
+          <p><span class="map-icon1"> </span>Dirección: Av. Universitaria #352</p>
+          <p><span class="map-icon2"> </span>caresoft.innova@gmail.com</p>
+          <p><span class="map-icon3"> </span>7943914 - 60466551</p>
+          <p>Potosí - Bolivia</p>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <div class="footer text-center">
+        <div class="container">
+          <div class="footer-inner wow zoomIn" data-wow-delay="0.3s">
+            <ul>
+              <li><a href="/otrolink/" target="_blank">Visitanos en :<span class="iconF icon-facebook"></span></a></li>
+              {% if user.is_authenticated %}
+                <!-- <li><a href="#team">Novedades</a></li> -->
+                <li>hola: {{user.username|upper}} <a href="/salir/" class="contact-me">Salir</a></li>
+                {% else %}
+                <li id="enlaces"><a href="/loguin/" class="scroll contact-me" data-toggle="modal" data-target="#exampleModal">Ingresar</a></li>
+                {% endif %}
+            </ul>
+          </div>
+          <script type="text/javascript">
+                  $(document).ready(function() {
+                    
+                    var defaults = {
+                        containerID: 'toTop', // fading element id
+                      containerHoverID: 'toTopHover', // fading element hover id
+                      scrollSpeed: 1200,
+                      easingType: 'linear' 
+                    };
+                    
+                    
+                    $().UItoTop({ easingType: 'easeOutQuart' });
+                    
+                  });
+                </script>
+        <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+        </div><br>
+         <span style="color:white;">Sitio Web creado por: Ing. Juan Javier L. - Ing. Richard Carmona E. </span>
+      </div>
+    </div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"> </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" > 
+                      
+
+        </div>
+    </div>
+  </div>
+
+</div>
+<div class="social">
+  <a href="javascript: void(0);" onclick="window.open('http://www.facebook.com/sharer.php?u=https://guarded-everglades-55859.herokuapp.com/','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');" class="icon icon-facebook"></a>
+  <a href="javascript: void(0);" onclick="window.open('http://twitter.com/home?status=https://guarded-everglades-55859.herokuapp.com/','ventanacompartir', 'toolbar=0, status=0, width=650, height=450' );" class="icon icon-twitter"></a>
+  <a href="javascript: void(0);" onclick="window.open('https://plus.google.com/share?url=https://guarded-everglades-55859.herokuapp.com/','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');" class="icon icon-google-plus"></a>
+  <a href="mailto:sistemasuatf12345@gmail.com" class="icon icon-mail" title="envie un email"></a>
+  {% if user.is_authenticated %}
+  <li id="enlaces"><a href="/perfilUser/" class="icon icon-user" title="Bien venido:{{user.username|upper}}"
+    data-toggle="modal" data-target="#exampleModal"></a></li>
+  {% endif %}
+</div>
+<script>
+    new WOW().init();
+</script>
+   <script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+   <script type="text/javascript">
+      $(document).ready(function($) {
+        $(".scroll").click(function(event){   
+          event.preventDefault();
+          $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+        });
+      });
+      $("#enlaces a").on("click",function(e){
+        e.preventDefault();
+        $.ajax({
+          type:'GET',
+          url:$(this).attr("href"),
+          success:function(resp){
+            console.log(resp);
+            $(".modal-body").html(resp);
+          }
+        });
+      });
+    </script>
+    <script>
+      $(function() {
+        var pull    = $('#pull');
+          menu    = $('nav ul');
+          menuHeight  = menu.height();
+        $(pull).on('click', function(e) {
+          e.preventDefault();
+          menu.slideToggle();
+        });
+        $(window).resize(function(){
+              var w = $(window).width();
+              if(w > 320 && menu.is(':hidden')) {
+                menu.removeAttr('style');
+              }
+          });
+      });
+    </script>
+  </body>
+</html>
+
