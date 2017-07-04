@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'social_django',
     'social.apps.django_app.default',
     'colegio.apps.inicio',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -50,8 +51,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
-
+CORS_ORIGIN_ALLOW_ALL = True 
 ROOT_URLCONF = 'colegio.urls'
 
 TEMPLATES = [
@@ -143,8 +146,8 @@ SOCIAL_AUTH_PIPELINE = (
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")#aumente
-STATICFILES_DIRS=(os.path.join(RUTA_PROYECTO,"static"),)
-MEDIA_ROOT=(os.path.join(RUTA_PROYECTO,"static/media"),)
+MEDIA_ROOT=(os.path.join(RUTA_PROYECTO,"media"),)
+STATIC_ROOT = os.path.join(RUTA_PROYECTO, 'staticfiles')
 MEDIA_URL='/static/media/'
 STATICFILES_DIRS = [#aumente
         os.path.join(BASE_DIR, "static"),
