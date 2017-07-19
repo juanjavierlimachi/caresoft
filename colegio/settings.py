@@ -150,7 +150,7 @@ MEDIA_ROOT=(os.path.join(RUTA_PROYECTO,"media"),)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL='/static/media/'
 STATICFILES_DIRS = [#aumente
-        os.path.join(RUTA_PROYECTO, "static"),
+        os.path.join(RUTA_PROYECTO, "static"),#esta linea es lo que redireciona a los archivos staticos
     ]
 db_from_env = dj_database_url.config(conn_max_age=500)#aumente
 DATABASES['default'].update(db_from_env)

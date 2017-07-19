@@ -148,7 +148,7 @@ def regisrarseUser(request):
 			if acceso.is_active and not acceso.is_staff:
 				login(request,acceso)
 				asunto = "Bienvenido: %s"%(request.POST['first_name'].capitalize())
-				mensaje = "Estamos felises por registrarte en nuestro sitio Web ahora ya eres uno más de nuestros usuarios online, esperamos tenerte bien informado con todas nuestras actividades no te lo pierdas opten más información ingresando al sitio web: con tu respetiva cuenta y bien revisando tu correo electrónico."
+				mensaje = "Estamos felises por averte registrado en nuestro sitio Web ahora ya eres uno más de nuestros usuarios online, esperamos tenerte bien informado con todas nuestras actividades no te lo pierdas opten más información ingresando al sitio web: https://shrouded-journey-73490.herokuapp.com/ con tu respetiva cuenta o bien revisando tu correo electrónico deves en cuando. Saludos"
 				#mail = EmailMessage(subject='Ejemplo de prueba', body='Este es un ejemplo de prueba de correo', from_email='sistemasuatf12345@gmail.com.com', to=['sistemasuatf12345@gmail.com.com'])
 				#mail.send()
 				send_mail(asunto, 
@@ -207,7 +207,7 @@ def perfilUser(request):
 def bienvenida(request):
 	user = request.user
 	print user
-	return HttpResponse("Hola %s,Estamos felises por registrarte en nuestro sitio Web ahora ya eres uno más de nuestros usuarios online, esperamos tenerte bien informado con todas nuestras actividades no te lo pierdas opten más información ingresando al sitio web: con tu respetiva cuenta y bien revisando tu correo electrónico."%(user))
+	return HttpResponse("Hola %s,Estamos felises por registrarte en nuestro sitio Web ahora ya eres uno más de nuestros usuarios online, esperamos tenerte bien informado con todas nuestras actividades no te lo pierdas opten más información ingresando al sitio web: https://shrouded-journey-73490.herokuapp.com/ con tu respetiva cuenta y bien revisando tu correo electrónico."%(user))
 def personal(request):
 	personal = User.objects.filter(is_superuser=True, is_staff=True)
 	print personal

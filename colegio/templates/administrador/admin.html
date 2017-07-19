@@ -136,58 +136,6 @@ function DatosUser(){
        $("#FormAjax").html('<img src="/static/img/log.gif" id="icono"></img><br>Procesando...');
     }
   }
-  function IngresoPro(){
-    $.ajax({
-      type:'GET',
-      url:'/inProduct/',
-      beforeSend:Espera,
-      success:function(resp){
-        $("#FormAjax").html(resp);
-      }
-    });
-    function Espera(){
-       $("#FormAjax").html('<img src="/static/img/log.gif" id="icono"></img><br>Procesando...');
-    }
-  }
-  function SalidaPro(){
-    $.ajax({
-      type:'GET',
-      url:'/outProduct/',
-      beforeSend:Espera,
-      success:function(resp){
-        $("#FormAjax").html(resp);
-      }
-    });
-    function Espera(){
-       $("#FormAjax").html('<img src="/static/img/log.gif" id="icono"></img><br>Procesando...');
-    }
-  }
-  function CapturaQR(){
-  $.ajax({
-        type:'GET',
-        url:'/captura_qr/',
-        beforeSend:Espera,
-        success:function(resp){
-            $('#FormAjax').html(resp);
-        }
-    });
-  function Espera(){
-       $("#FormAjax").html('<img src="/static/img/log.gif" id="icono"></img><br>Procesando...');
-    }
-}
-function CrearBackut(){
-  $.ajax({
-        type:'GET',
-        url:'/CrearBackutDB/',
-        beforeSend:Espera,
-        success:function(resp){
-            $('#FormAjax').html(resp);
-        }
-    });
-  function Espera(){
-       $("#FormAjax").html('<img src="/static/img/log.gif" id="icono"></img><br>Procesando...');
-    }
-}
 
 function NewAlumnos(){
   $.ajax({
@@ -215,19 +163,7 @@ function VerAlumnos(){
     $("#FormAjax").html('<img src="/static/img/log.gif" id="icono"></img><br>Procesando...');
   }
 }
-function KardexGeneral(){
-  $.ajax({
-    type:'GET',
-    url:'/KardexGeneral/',
-    beforeSend:Espera,
-    success:function(resp){
-      $("#FormAjax").html(resp);
-    }
-  });
-  function Espera(){
-    $("#FormAjax").html('<img src="/static/img/log.gif" id="icono"></img><br>Procesando...');
-  }
-}
+
 function Mensajes(){
   $.ajax({
     type:'GET',
@@ -415,22 +351,7 @@ function Mensajes(){
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                         <li>
-                            <a href="#"><span class="glyphicon glyphicon-align-center"></span>               Temas de Avanse</a>
-                            <!-- <ul class="nav nav-second-level">
-                                <li><a href="#" onclick="NewCategoria()">Agregar Avanse</a></li>
-                                <li><a href="#" onclick="VerCategorias()">Ver Avanses</a></li>
-                            </ul> -->
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><span class="glyphicon glyphicon-briefcase"></span>              Cursos </a>
-                            <ul class="nav nav-second-level">
-                                <li><a href="#" onclick="NewClient()">Agregar Nuevo Curso</a></li>
-                                <li><a href="#" onclick="VerClientes()">Ver Curso</a></li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
+
                         <li>
                             <a href="#"><span class="glyphicon glyphicon-cog"></span>                           Información</a>
                             <ul class="nav nav-second-level">
@@ -452,11 +373,6 @@ function Mensajes(){
             <!-- /.navbar-static-side -->
         </nav>
   <div id="page-wrapper">
-          <!-- {% if message %}
-            <div class='alert alert-success'>
-              {{ message }}
-            </div>
-          {% endif %} -->
         <div id="DatosAjax"></div>
         <div id="FormAjax"></div>
 
@@ -489,9 +405,6 @@ function Mensajes(){
                         </div>
                         <!-- /.panel-body -->
                     </div>
-                    <!-- /.panel -->
-                 
-                    <!-- /.panel -->
                 </div>
                 <!-- /.col-lg-8 -->
                 <div class="col-lg-4">

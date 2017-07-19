@@ -11,7 +11,7 @@
         <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
             <div class="panel panel-info" >
                     <div class="panel-heading">
-                        <div class="panel-title">Inicie Sesión</div>
+                        <div class="panel-title">Iniciar Sesión</div>
                         <div style="float:right; font-size: 80%; position: relative; top:-20px"><a class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </a></div>
@@ -58,8 +58,6 @@
                         </div>                     
                     </div>  
         </div>
-
-
 <!--aviso-->
 <div id="aviso" style="display:none; " class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
             <div class="panel panel-info" >
@@ -74,23 +72,19 @@
 
                         <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
                      
-                            <p>
-                        Hola le pedimos que se registrarse a nuestro sítio web para que usted sea uno mas de nuestros usuarios en nuestra plataforma online para asi contactarnos desde cualquier lugar. enviandolo un mensaje a su correro electrónico cualquier novedad o curso que se lleve acabo.<a id="#" href="#" onclick="$('#aviso').hide(); $('#signupbox').show()">Registrarme</a>
-                    </p>
+             <p>
+                    Hola le pedimos que se registrarse a nuestro sítio web para que usted sea uno mas de nuestros usuarios en nuestra plataforma online para asi contactarnos desde cualquier lugar. enviandolo un mensaje a su correro electrónico cualquier novedad o curso que se lleve acabo.<a id="#" href="#" onclick="$('#aviso').hide(); $('#signupbox').show()">Registrarme</a>
+            </p>
 
                         </div>                     
                     </div>  
         </div>
 <!--fin aviso-->
-
-
-
-
         <div id="signupbox" style="display:none; " class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                     <div class="panel panel-info">
                         <div class="panel-heading">
-                            <div class="panel-title">Formulario de Registro (requeridos *)</div>
-                            <div style="float:right; font-size: 85%; position: relative; top:-20px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Ingresar</a></div>                                                                            
+                            <div class="panel-title">Formulario de Registro (Todos los datos con * son requeridos)</div>
+                            <div style="float:right; font-size: 85%; position: relative; top:-20px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Ingresar</a></div>                                                   <span>  </span>                         
                             <div style="float:right; font-size: 80%; position: relative; top:-20px"><a class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </a></div>
@@ -101,11 +95,36 @@
                                 <div id="signupalert" style="display:none" class="alert alert-danger">
                                     <span></span>
                                 </div>
-                                    
+                                <p style="text-align: center">Datos personales</p>
+                                <div class="form-group">
+                                    <label for="firstname" class="col-md-3 control-label">Nombre(*)</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="first_name" placeholder="Ejem. Juan" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastname" class="col-md-3 control-label">Apellido(s*)</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="last_name" placeholder="Ejem. Perez" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="firstname" class="col-md-3 control-label">Celular(*)</label>
+                                    <div class="col-md-9">
+                                        <input type="number" class="form-control" name="telefono" placeholder="Max 8 digitos" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="col-md-3 control-label">Email(*)</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" id="email" name="email" placeholder="Ejem. jperez@gmail.com" required>
+                                    </div>
+                                </div>
+                                <p style="text-align: center">Datos para crear tu cuenta en el sistema</p>
                                 <div class="form-group">
                                     <label for="icode" class="col-md-3 control-label">Nombre de Usuario(*)</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="username" id="user" placeholder="Ingrese su Nombre de Usuario" required>
+                                        <input type="text" class="form-control" name="username" id="user" placeholder="Ejem. jjavierl" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -118,30 +137,6 @@
                                     <label for="password" class="col-md-3 control-label">Confirmar(*)</label>
                                     <div class="col-md-9">
                                         <input type="password" class="form-control" name="password2" placeholder="Confirme su contraseña" required>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="firstname" class="col-md-3 control-label">Nombre(*)</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" name="first_name" placeholder="Ingrese su nombre" required>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="lastname" class="col-md-3 control-label">Apellido(*)</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" name="last_name" placeholder="Ingrese su apellido" required>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="firstname" class="col-md-3 control-label">Celular(*)</label>
-                                    <div class="col-md-9">
-                                        <input type="number" class="form-control" name="telefono" placeholder="Ingrese su num. de cel" required>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email" class="col-md-3 control-label">Email(*)</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" id="email" name="email" placeholder="Ingrese su e-mail" required>
                                     </div>
                                 </div>
 
@@ -196,7 +191,7 @@ $(function(){
                 {
                     //$('#exampleModal').modal('hide');
                     window.location='/';
-                    bienvenida();
+                   // bienvenida();
                 }
                 else{
                      $("#login-alert").show(500);
@@ -207,17 +202,17 @@ $(function(){
     });
     $("#btn-signup").on("click",function(e){
         e.preventDefault();
-        $('#btn-signup').attr("disabled", true);
-        //$('#btn-signup').attr("value","Registrando...");
         console.log($("#signupform").serialize());
         $.ajax({
             type:'POST',
             url:'/regisrarse/',
+            beforeSend:Espera,
             data:$("#signupform").serialize(),
             success:function(resp){
                 if(resp=='/'){
                 $('#exampleModal').modal('hide');
                 window.location='/';
+               // bienvenida();
                 }
                 else
                 {
@@ -226,6 +221,10 @@ $(function(){
                 }
             }
         });
+        function Espera(){
+          $('#btn-signup').attr("disabled", true);
+          $('#btn-signup').text("Enviando...");
+        }
     });
 });
 function bienvenida()
@@ -235,7 +234,7 @@ function bienvenida()
             url:'/bienvenida/',
             success:function(resp){
                 $("#exampleModal").modal("show");
-                $("#exampleModal").html(resp);
+                //$("#exampleModal").html(resp);
             }
         });
     }

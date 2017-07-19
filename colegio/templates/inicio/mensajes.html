@@ -5,7 +5,7 @@
     {% csrf_token %}
                 <label>Asunto: (*)</label><input type="text" name="asunto" id="asunto" placeholder="Descrpción del contenido" required />
                <label>Mensaje: (*)</label> <textarea placeholder="Escriba el mensaje a enviar..."
-               name="mensaje" cols="40" rows="5"></textarea><br>
+               name="mensaje" cols="40" rows="5" required></textarea><br>
     <button class="btn btn-success">Guardar</button>
   </form>
 </div>
@@ -16,11 +16,16 @@
         $.ajax({
             type:'POST',
             url:'/mensajes/',
+            beforeSend:Espera,
             data:$('#Tipo').serialize(),
             success:function(resp){
                 $("#FormAjax").html(resp);
             }
         });
+        function Espera(){
+          $('.btn-success').attr("disabled", true);
+          $('.btn-success').text("Enviando...");
+        }
     });
     });
 </script>
