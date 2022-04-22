@@ -21,7 +21,7 @@ psycopg2==2.7.1
 pycparser==2.17
 PyJWT==1.5.0
 pyparsing==2.2.0
-PyPDF2==1.26.0
+PyPDF2==1.27.5
 pystache==0.5.4
 python-openid==2.2.5
 python-social-auth==0.3.6
